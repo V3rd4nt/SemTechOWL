@@ -148,11 +148,6 @@
                                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Künstlicher_Satellit
-<http://www.co-ode.org/ontologies/ont.owl#Künstlicher_Satellit> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Satellit> .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete
 <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> rdf:type owl:Class ;
                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> .
@@ -358,6 +353,657 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#Zwergstern
 <http://www.co-ode.org/ontologies/ont.owl#Zwergstern> rdf:type owl:Class ;
                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Stern> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#Adrastea
+<http://www.co-ode.org/ontologies/ont.owl#Adrastea> rdf:type owl:NamedIndividual ,
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Biela_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Biela_Komet> rdf:type owl:NamedIndividual ,
+                                                                <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ceres
+<http://www.co-ode.org/ontologies/ont.owl#Ceres> rdf:type owl:NamedIndividual ,
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Donati_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Donati_Komet> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Erde
+<http://www.co-ode.org/ontologies/ont.owl#Erde> rdf:type owl:NamedIndividual ,
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Gesteinsplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Eris
+<http://www.co-ode.org/ontologies/ont.owl#Eris> rdf:type owl:NamedIndividual ,
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Europa
+<http://www.co-ode.org/ontologies/ont.owl#Europa> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet
+<http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> ;
+                                                              owl:sameAs <http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet
+<http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Haumea
+<http://www.co-ode.org/ontologies/ont.owl#Haumea> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Io
+<http://www.co-ode.org/ontologies/ont.owl#Io> rdf:type owl:NamedIndividual ,
+                                                       <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Jupiter
+<http://www.co-ode.org/ontologies/ont.owl#Jupiter> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Gasplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet
+<http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Makemake
+<http://www.co-ode.org/ontologies/ont.owl#Makemake> rdf:type owl:NamedIndividual ,
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mars
+<http://www.co-ode.org/ontologies/ont.owl#Mars> rdf:type owl:NamedIndividual ,
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Gesteinsplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Merkur
+<http://www.co-ode.org/ontologies/ont.owl#Merkur> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Gesteinsplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Neptun
+<http://www.co-ode.org/ontologies/ont.owl#Neptun> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Gasplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pandora
+<http://www.co-ode.org/ontologies/ont.owl#Pandora> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pluto
+<http://www.co-ode.org/ontologies/ont.owl#Pluto> rdf:type owl:NamedIndividual ,
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Prometheus
+<http://www.co-ode.org/ontologies/ont.owl#Prometheus> rdf:type owl:NamedIndividual ,
+                                                               <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Proteus
+<http://www.co-ode.org/ontologies/ont.owl#Proteus> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Saturn
+<http://www.co-ode.org/ontologies/ont.owl#Saturn> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Gasplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9
+<http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet
+<http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tethys
+<http://www.co-ode.org/ontologies/ont.owl#Tethys> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Uranus
+<http://www.co-ode.org/ontologies/ont.owl#Uranus> rdf:type owl:NamedIndividual ,
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Gasplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Venus
+<http://www.co-ode.org/ontologies/ont.owl#Venus> rdf:type owl:NamedIndividual ,
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Gesteinsplanet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#17P/Holmes
+<http://www.co-ode.org/ontologies/ont.owl#17P/Holmes> rdf:type owl:NamedIndividual ,
+                                                               <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Io>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Adrastea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Biela_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Biela_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Biela_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Biela_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#17P/Holmes>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Ceres>
+                        <http://www.co-ode.org/ontologies/ont.owl#Eris>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Ceres>
+                        <http://www.co-ode.org/ontologies/ont.owl#Haumea>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Ceres>
+                        <http://www.co-ode.org/ontologies/ont.owl#Makemake>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Ceres>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pluto>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Donati_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Donati_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Donati_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Donati_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Donati_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#17P/Holmes>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Erde>
+                        <http://www.co-ode.org/ontologies/ont.owl#Mars>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Erde>
+                        <http://www.co-ode.org/ontologies/ont.owl#Merkur>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Erde>
+                        <http://www.co-ode.org/ontologies/ont.owl#Venus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Eris>
+                        <http://www.co-ode.org/ontologies/ont.owl#Haumea>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Eris>
+                        <http://www.co-ode.org/ontologies/ont.owl#Makemake>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Eris>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pluto>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                        <http://www.co-ode.org/ontologies/ont.owl#Io>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                        <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                        <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Europa>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#17P/Holmes>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Haumea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Makemake>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Haumea>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pluto>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet>
+                        <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Io>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Io>
+                        <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Io>
+                        <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Io>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Jupiter>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Jupiter>
+                        <http://www.co-ode.org/ontologies/ont.owl#Neptun>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Jupiter>
+                        <http://www.co-ode.org/ontologies/ont.owl#Saturn>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Jupiter>
+                        <http://www.co-ode.org/ontologies/ont.owl#Uranus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Makemake>
+                        <http://www.co-ode.org/ontologies/ont.owl#Pluto>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Mars>
+                        <http://www.co-ode.org/ontologies/ont.owl#Merkur>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Mars>
+                        <http://www.co-ode.org/ontologies/ont.owl#Venus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Merkur>
+                        <http://www.co-ode.org/ontologies/ont.owl#Venus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Neptun>
+                        <http://www.co-ode.org/ontologies/ont.owl#Saturn>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Neptun>
+                        <http://www.co-ode.org/ontologies/ont.owl#Uranus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                        <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                        <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Pandora>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                        <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Prometheus>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Proteus>
+                        <http://www.co-ode.org/ontologies/ont.owl#Tethys>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Saturn>
+                        <http://www.co-ode.org/ontologies/ont.owl#Uranus>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9>
+                        <http://www.co-ode.org/ontologies/ont.owl#17P/Holmes>
+                      )
+] .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

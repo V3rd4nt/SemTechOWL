@@ -33,6 +33,13 @@
                                                                rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#hatRing
+<http://www.co-ode.org/ontologies/ont.owl#hatRing> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planet> ;
+                                                   rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Satellit> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hatSatellit
 <http://www.co-ode.org/ontologies/ont.owl#hatSatellit> rdf:type owl:ObjectProperty ;
                                                        rdfs:subPropertyOf owl:topObjectProperty ;
@@ -54,6 +61,28 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatDurchmesserVgl.Erde
+<http://www.co-ode.org/ontologies/ont.owl#hatDurchmesserVgl.Erde> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                  rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planet> ;
+                                                                  rdfs:range owl:real .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatMasseVgl.Erde
+<http://www.co-ode.org/ontologies/ont.owl#hatMasseVgl.Erde> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planet> ;
+                                                            rdfs:range owl:real .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatRotationsperiode
+<http://www.co-ode.org/ontologies/ont.owl#hatRotationsperiode> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                               rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planet> ,
+                                                                           <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> ;
+                                                               rdfs:range xsd:string .
+
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand
 <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> rdf:type owl:DatatypeProperty ;

@@ -449,13 +449,39 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#außerer_Planet
 <http://www.co-ode.org/ontologies/ont.owl#außerer_Planet> rdf:type owl:Class ;
+                                                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:float ;
+                                                                                                     owl:withRestrictions ( [ xsd:minInclusive "4501.0"^^xsd:float
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ] ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> ,
-                                                                          <http://www.co-ode.org/ontologies/ont.owl#Planet> .
+                                                                          <http://www.co-ode.org/ontologies/ont.owl#Planet> ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> ;
+                                                                            owl:someValuesFrom xsd:float
+                                                                          ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#innerer_Planet
 <http://www.co-ode.org/ontologies/ont.owl#innerer_Planet> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
+                                                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> ;
+                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:float ;
+                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "150.0"^^xsd:float
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                              ] ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> ;
+                                                                            owl:someValuesFrom xsd:float
+                                                                          ] .
 
 
 #################################################################

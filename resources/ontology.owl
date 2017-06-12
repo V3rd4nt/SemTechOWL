@@ -164,6 +164,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                                  rdfs:range xsd:float .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt
+<http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                  rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Satellit> ;
+                                                                  rdfs:range xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend
 <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> rdf:type owl:DatatypeProperty ;
                                                               rdfs:subPropertyOf owl:topDataProperty ;
@@ -432,10 +439,6 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> rdf:type owl:Class ;
-                                                              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> ;
-                                                                                    owl:hasValue "true"^^xsd:boolean
-                                                                                  ] ;
                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Komet> .
 
 
@@ -680,11 +683,19 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit
 <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> rdf:type owl:Class ;
+                                                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> ;
+                                                                                      owl:hasValue "false"^^xsd:boolean
+                                                                                    ] ;
                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Satellit> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#natürlicher_Satellit
 <http://www.co-ode.org/ontologies/ont.owl#natürlicher_Satellit> rdf:type owl:Class ;
+                                                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> ;
+                                                                                      owl:hasValue "true"^^xsd:boolean
+                                                                                    ] ;
                                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Satellit> .
 
 
@@ -708,13 +719,14 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ariel1
-<http://www.co-ode.org/ontologies/ont.owl#Ariel1> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+<http://www.co-ode.org/ontologies/ont.owl#Ariel1> rdf:type owl:NamedIndividual ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Asterix
 <http://www.co-ode.org/ontologies/ont.owl#Asterix> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Biela_Komet
@@ -827,7 +839,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Explorer1
 <http://www.co-ode.org/ontologies/ont.owl#Explorer1> rdf:type owl:NamedIndividual ,
-                                                              <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+                                                              <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+                                                     <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Fukang_Meteorit
@@ -920,7 +933,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Iris1
 <http://www.co-ode.org/ontologies/ont.owl#Iris1> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Jupiter
@@ -951,6 +965,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet> rdf:type owl:NamedIndividual ;
                                                           <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "3370.0"^^xsd:float .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Komet_C390_Q1
+<http://www.co-ode.org/ontologies/ont.owl#Komet_C390_Q1> rdf:type owl:NamedIndividual ;
+                                                         <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit
@@ -1155,7 +1174,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#TUGSAT-1
 <http://www.co-ode.org/ontologies/ont.owl#TUGSAT-1> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet
@@ -1169,7 +1189,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Thor1
 <http://www.co-ode.org/ontologies/ont.owl#Thor1> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Titan
@@ -1293,6 +1314,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#94_Aurora
 <http://www.co-ode.org/ontologies/ont.owl#94_Aurora> rdf:type owl:NamedIndividual ;
                                                      <http://www.co-ode.org/ontologies/ont.owl#hatSchweif> "false"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#C/-43K1_»Caesar«
+<http://www.co-ode.org/ontologies/ont.owl#C/-43K1_»Caesar«> rdf:type owl:NamedIndividual ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> "false"^^xsd:boolean .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

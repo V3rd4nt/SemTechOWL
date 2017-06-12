@@ -150,6 +150,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                                           rdfs:range xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit
+<http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                                         rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> ;
+                                                         rdfs:range xsd:float .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hatÄquatordurchmesser
 <http://www.co-ode.org/ontologies/ont.owl#hatÄquatordurchmesser> rdf:type owl:DatatypeProperty ;
                                                                  rdfs:subPropertyOf owl:topDataProperty ;
@@ -164,12 +171,23 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                               rdfs:range xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend
+<http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Komet> ;
+                                                            rdfs:range xsd:boolean .
+
+
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Aperiodischer_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Aperiodischer_Komet> rdf:type owl:Class ;
+                                                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> ;
+                                                                                     owl:hasValue "false"^^xsd:boolean
+                                                                                   ] ;
                                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Komet> .
 
 
@@ -350,11 +368,29 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> rdf:type owl:Class ;
+                                                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> ;
+                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                             owl:onDatatype xsd:float ;
+                                                                                                             owl:withRestrictions ( [ xsd:maxInclusive "200.0"^^xsd:float
+                                                                                                                                    ]
+                                                                                                                                  )
+                                                                                                           ]
+                                                                                      ] ;
                                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete
 <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> rdf:type owl:Class ;
+                                                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> ;
+                                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                              owl:onDatatype xsd:float ;
+                                                                                                              owl:withRestrictions ( [ xsd:minExclusive "200.0"^^xsd:float
+                                                                                                                                     ]
+                                                                                                                                   )
+                                                                                                            ]
+                                                                                       ] ;
                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> .
 
 
@@ -396,6 +432,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Periodischer_Komet> rdf:type owl:Class ;
+                                                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> ;
+                                                                                    owl:hasValue "true"^^xsd:boolean
+                                                                                  ] ;
                                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Komet> .
 
 
@@ -678,8 +718,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Biela_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Biela_Komet> rdf:type owl:NamedIndividual ,
-                                                                <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+<http://www.co-ode.org/ontologies/ont.owl#Biela_Komet> rdf:type owl:NamedIndividual ;
+                                                       <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "6.65"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Bovedy_Meteorit
@@ -701,6 +741,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 <http://www.co-ode.org/ontologies/ont.owl#Ceres> rdf:type owl:NamedIndividual ,
                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> ;
                                                  <http://www.co-ode.org/ontologies/ont.owl#istSternSatellit> <http://www.co-ode.org/ontologies/ont.owl#Sonne> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hatSchweif> "false"^^xsd:boolean ;
                                                  <http://www.co-ode.org/ontologies/ont.owl#hatUmgebungSeinerBahnBereinigt> "false"^^xsd:boolean ;
                                                  <http://www.co-ode.org/ontologies/ont.owl#hatÄquatordurchmesser> "963.0"^^xsd:float .
 
@@ -726,8 +767,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Donati_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Donati_Komet> rdf:type owl:NamedIndividual ,
-                                                                 <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Donati_Komet> rdf:type owl:NamedIndividual ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "1951.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dronino_Meteorit
@@ -746,8 +787,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet> rdf:type owl:NamedIndividual ,
-                                                                     <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+<http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet> rdf:type owl:NamedIndividual ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "3.3"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Erde
@@ -805,23 +846,24 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet
-<http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet> rdf:type owl:NamedIndividual ;
+                                                              owl:sameAs <http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> ;
+                                                              <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "4000000.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet
-<http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet> rdf:type owl:NamedIndividual ,
-                                                                          <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Großer_Septemberkomet> rdf:type owl:NamedIndividual ;
+                                                                 <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "759.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Hale-Bopp_Komet> rdf:type owl:NamedIndividual ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "2540.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet> rdf:type owl:NamedIndividual ,
-                                                                      <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+<http://www.co-ode.org/ontologies/ont.owl#Halleyscher_Komet> rdf:type owl:NamedIndividual ;
+                                                             <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "75.32"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Haumea
@@ -857,8 +899,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet> rdf:type owl:NamedIndividual ,
-                                                                     <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Ikeya-Seki_Komet> rdf:type owl:NamedIndividual ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "880.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Imilac_Meteorit
@@ -907,8 +949,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet
-<http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet> rdf:type owl:NamedIndividual ,
-                                                                   <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet> rdf:type owl:NamedIndividual ;
+                                                          <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "3370.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit
@@ -1095,8 +1137,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9
-<http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9> rdf:type owl:NamedIndividual ,
-                                                                     <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+<http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9> rdf:type owl:NamedIndividual ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "7.54"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Sonne
@@ -1117,8 +1159,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet
-<http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> rdf:type owl:NamedIndividual ,
-                                                                    <http://www.co-ode.org/ontologies/ont.owl#Langperiodischer_Komete> .
+<http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tethys
@@ -1210,8 +1251,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#17P/Holmes
-<http://www.co-ode.org/ontologies/ont.owl#17P/Holmes> rdf:type owl:NamedIndividual ,
-                                                               <http://www.co-ode.org/ontologies/ont.owl#Kurzperiodischer_Komet> .
+<http://www.co-ode.org/ontologies/ont.owl#17P/Holmes> rdf:type owl:NamedIndividual ;
+                                                      <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "6.88"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#19_Fortuna

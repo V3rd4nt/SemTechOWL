@@ -15,6 +15,7 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#hatAsteroidenSatellit
 <http://www.co-ode.org/ontologies/ont.owl#hatAsteroidenSatellit> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#istAsteroidenSatellit> ;
                                                                  rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Asteroid> ;
                                                                  rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Asteroidensatellit> .
 
@@ -22,6 +23,7 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#hatPlanetenSatellit
 <http://www.co-ode.org/ontologies/ont.owl#hatPlanetenSatellit> rdf:type owl:ObjectProperty ;
                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#istPlanetenSatellit> ;
                                                                rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planet> ;
                                                                rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
 
@@ -59,8 +61,23 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#hatZwergplanetenSatellit
 <http://www.co-ode.org/ontologies/ont.owl#hatZwergplanetenSatellit> rdf:type owl:ObjectProperty ;
                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#istZwergplanetenSatellit> ;
                                                                     rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> ;
                                                                     rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#istAsteroidenSatellit
+<http://www.co-ode.org/ontologies/ont.owl#istAsteroidenSatellit> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Asteroidensatellit> ;
+                                                                 rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Asteroid> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#istPlanetenSatellit
+<http://www.co-ode.org/ontologies/ont.owl#istPlanetenSatellit> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> ;
+                                                               rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Planet> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#istSternPlanetSatellit
@@ -77,6 +94,13 @@
                                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Stern> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#istZwergplanetenSatellit
+<http://www.co-ode.org/ontologies/ont.owl#istZwergplanetenSatellit> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> ;
+                                                                    rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Zwergplanet> .
+
+
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
@@ -90,6 +114,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                     rdfs:subPropertyOf owl:topDataProperty ;
                                                     rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Großkörper> ;
                                                     rdfs:range xsd:float .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser
+<http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteorit> ;
+                                                          rdfs:range xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hatDurchmesserVgl.Erde
@@ -111,6 +142,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                                                      rdfs:subPropertyOf owl:topDataProperty ;
                                                                                      rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteorit> ;
                                                                                      rdfs:range xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse
+<http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Stern> ;
+                                                                rdfs:range xsd:string .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hatMasse
@@ -279,6 +317,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Gelber_Zwerg
 <http://www.co-ode.org/ontologies/ont.owl#Gelber_Zwerg> rdf:type owl:Class ;
+                                                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> ;
+                                                                              owl:hasValue "5"
+                                                                            ] ;
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Zwergstern> .
 
 
@@ -308,6 +350,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hauptreihenstern
 <http://www.co-ode.org/ontologies/ont.owl#Hauptreihenstern> rdf:type owl:Class ;
+                                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> ;
+                                                                                  owl:hasValue "5"
+                                                                                ] ;
                                                             rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Stern> .
 
 
@@ -464,6 +510,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Roter_Riese
 <http://www.co-ode.org/ontologies/ont.owl#Roter_Riese> rdf:type owl:Class ;
+                                                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> ;
+                                                                             owl:hasValue "3"
+                                                                           ] ;
                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Riesenstern> .
 
 
@@ -531,6 +581,15 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe
 <http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe> rdf:type owl:Class ;
+                                                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser> ;
+                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:maxInclusive "10.0"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                             ] ;
                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
 
 
@@ -561,6 +620,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Weißer_Zwerg
 <http://www.co-ode.org/ontologies/ont.owl#Weißer_Zwerg> rdf:type owl:Class ;
+                                                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> ;
+                                                                              owl:hasValue "7"
+                                                                            ] ;
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Zwergstern> .
 
 
@@ -685,7 +748,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ariel
 <http://www.co-ode.org/ontologies/ont.owl#Ariel> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ariel1
@@ -694,8 +757,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Asterix
-<http://www.co-ode.org/ontologies/ont.owl#Asterix> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+<http://www.co-ode.org/ontologies/ont.owl#Asterix> rdf:type owl:NamedIndividual ;
                                                    <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
@@ -711,7 +773,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Callisto
 <http://www.co-ode.org/ontologies/ont.owl#Callisto> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Campo_del_Cielo_Meteorit
@@ -730,22 +792,22 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Charon
 <http://www.co-ode.org/ontologies/ont.owl#Charon> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dactyl
 <http://www.co-ode.org/ontologies/ont.owl#Dactyl> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Asteroidensatellit> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Deimos
 <http://www.co-ode.org/ontologies/ont.owl#Deimos> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dione
 <http://www.co-ode.org/ontologies/ont.owl#Dione> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Donati_Komet
@@ -760,12 +822,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dysnomia
 <http://www.co-ode.org/ontologies/ont.owl#Dysnomia> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Enceladus
 <http://www.co-ode.org/ontologies/ont.owl#Enceladus> rdf:type owl:NamedIndividual ,
-                                                              <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                              <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Enckescher_Komet
@@ -787,7 +849,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Erdmond
 <http://www.co-ode.org/ontologies/ont.owl#Erdmond> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Eris
@@ -804,12 +866,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Europa
 <http://www.co-ode.org/ontologies/ont.owl#Europa> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Explorer1
-<http://www.co-ode.org/ontologies/ont.owl#Explorer1> rdf:type owl:NamedIndividual ,
-                                                              <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+<http://www.co-ode.org/ontologies/ont.owl#Explorer1> rdf:type owl:NamedIndividual ;
                                                      <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
@@ -820,7 +881,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ganymede
 <http://www.co-ode.org/ontologies/ont.owl#Ganymede> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Grand_Meteorit
@@ -862,17 +923,17 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hydra
 <http://www.co-ode.org/ontologies/ont.owl#Hydra> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hyperion
 <http://www.co-ode.org/ontologies/ont.owl#Hyperion> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Iapetus
 <http://www.co-ode.org/ontologies/ont.owl#Iapetus> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ida
@@ -893,17 +954,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Io
 <http://www.co-ode.org/ontologies/ont.owl#Io> rdf:type owl:NamedIndividual ,
-                                                       <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Iperion
-<http://www.co-ode.org/ontologies/ont.owl#Iperion> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                       <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Iris1
-<http://www.co-ode.org/ontologies/ont.owl#Iris1> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+<http://www.co-ode.org/ontologies/ont.owl#Iris1> rdf:type owl:NamedIndividual ;
                                                  <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
@@ -927,7 +982,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kerberos
 <http://www.co-ode.org/ontologies/ont.owl#Kerberos> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kohoutek_Komet
@@ -973,7 +1028,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mimas
 <http://www.co-ode.org/ontologies/ont.owl#Mimas> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mineo_Meteorit
@@ -983,7 +1038,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Miranda
 <http://www.co-ode.org/ontologies/ont.owl#Miranda> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Neptun
@@ -1000,7 +1055,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nereid
 <http://www.co-ode.org/ontologies/ont.owl#Nereid> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Neuschwanstein_Meteorit
@@ -1010,12 +1065,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nix
 <http://www.co-ode.org/ontologies/ont.owl#Nix> rdf:type owl:NamedIndividual ,
-                                                        <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                        <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Oberon
 <http://www.co-ode.org/ontologies/ont.owl#Oberon> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Oldenburg_Meteorit
@@ -1030,12 +1085,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Phobos
 <http://www.co-ode.org/ontologies/ont.owl#Phobos> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Phoebe
 <http://www.co-ode.org/ontologies/ont.owl#Phoebe> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Pluto
@@ -1051,7 +1106,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Proteus
 <http://www.co-ode.org/ontologies/ont.owl#Proteus> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Proxima_Centauri
@@ -1072,7 +1127,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Puck
 <http://www.co-ode.org/ontologies/ont.owl#Puck> rdf:type owl:NamedIndividual ,
-                                                         <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Quidong_Meteorit
@@ -1082,7 +1137,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Rhea
 <http://www.co-ode.org/ontologies/ont.owl#Rhea> rdf:type owl:NamedIndividual ,
-                                                         <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Richardton_Meteorit
@@ -1138,12 +1193,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Styx
 <http://www.co-ode.org/ontologies/ont.owl#Styx> rdf:type owl:NamedIndividual ,
-                                                         <http://www.co-ode.org/ontologies/ont.owl#Zwergplanetenmond> .
+                                                         <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#TUGSAT-1
-<http://www.co-ode.org/ontologies/ont.owl#TUGSAT-1> rdf:type owl:NamedIndividual ,
-                                                             <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+<http://www.co-ode.org/ontologies/ont.owl#TUGSAT-1> rdf:type owl:NamedIndividual ;
                                                     <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
@@ -1153,23 +1207,22 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tethys
 <http://www.co-ode.org/ontologies/ont.owl#Tethys> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Thor1
-<http://www.co-ode.org/ontologies/ont.owl#Thor1> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#künstlicher_Satellit> ;
+<http://www.co-ode.org/ontologies/ont.owl#Thor1> rdf:type owl:NamedIndividual ;
                                                  <http://www.co-ode.org/ontologies/ont.owl#istInUmlaufEinerObjekt> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Titan
 <http://www.co-ode.org/ontologies/ont.owl#Titan> rdf:type owl:NamedIndividual ,
-                                                          <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Titania
 <http://www.co-ode.org/ontologies/ont.owl#Titania> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Toluca_Meteorit
@@ -1179,12 +1232,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Triton
 <http://www.co-ode.org/ontologies/ont.owl#Triton> rdf:type owl:NamedIndividual ,
-                                                           <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Umbriel
 <http://www.co-ode.org/ontologies/ont.owl#Umbriel> rdf:type owl:NamedIndividual ,
-                                                            <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Uranus

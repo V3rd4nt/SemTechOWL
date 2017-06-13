@@ -116,13 +116,6 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                     rdfs:range xsd:float .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser
-<http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser> rdf:type owl:DatatypeProperty ;
-                                                          rdfs:subPropertyOf owl:topDataProperty ;
-                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteorit> ;
-                                                          rdfs:range xsd:float .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#hatDurchmesserVgl.Erde
 <http://www.co-ode.org/ontologies/ont.owl#hatDurchmesserVgl.Erde> rdf:type owl:DatatypeProperty ;
                                                                   rdfs:subPropertyOf owl:topDataProperty ;
@@ -187,6 +180,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                             rdfs:range xsd:float .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#hatStamm
+<http://www.co-ode.org/ontologies/ont.owl#hatStamm> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteorit> ;
+                                                    rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden
+<http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                              rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteorit> ;
+                                                              rdfs:range xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hatUmgebungSeinerBahnBereinigt
 <http://www.co-ode.org/ontologies/ont.owl#hatUmgebungSeinerBahnBereinigt> rdf:type owl:DatatypeProperty ;
                                                                           rdfs:subPropertyOf owl:topDataProperty ;
@@ -222,6 +229,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                               rdfs:range xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht
+<http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                  rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> ;
+                                                                  rdfs:range xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend
 <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> rdf:type owl:DatatypeProperty ;
                                                             rdfs:subPropertyOf owl:topDataProperty ;
@@ -232,6 +246,15 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#Achondrite
+<http://www.co-ode.org/ontologies/ont.owl#Achondrite> rdf:type owl:Class ;
+                                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatStamm> ;
+                                                                            owl:hasValue "Mantel von Asteroiden"
+                                                                          ] ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Differenzierte_Meteoriten> .
+
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Aperiodischer_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Aperiodischer_Komet> rdf:type owl:Class ;
@@ -275,9 +298,27 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Zwergstern> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Differenzierte_Meteoriten
+<http://www.co-ode.org/ontologies/ont.owl#Differenzierte_Meteoriten> rdf:type owl:Class ;
+                                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> ;
+                                                                                           owl:hasValue "true"^^xsd:boolean
+                                                                                         ] ;
+                                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Doppelsternsystem
 <http://www.co-ode.org/ontologies/ont.owl#Doppelsternsystem> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#System> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Eisen-Meteoriten
+<http://www.co-ode.org/ontologies/ont.owl#Eisen-Meteoriten> rdf:type owl:Class ;
+                                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatStamm> ;
+                                                                                  owl:hasValue "Kern von Asteroiden"
+                                                                                ] ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Differenzierte_Meteoriten> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Eruptionsveränderlicher_Stern
@@ -423,13 +464,31 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Neutronenstern> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Meteor
+<http://www.co-ode.org/ontologies/ont.owl#Meteor> rdf:type owl:Class ;
+                                                  owl:equivalentClass <http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe> ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Meteorit> rdf:type owl:Class ;
-                                                    owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> ;
-                                                                          owl:hasValue "true"^^xsd:boolean
+                                                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> ;
+                                                                                                 owl:hasValue "true"^^xsd:boolean
+                                                                                               ]
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> ;
+                                                                                                 owl:hasValue "false"^^xsd:boolean
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
                                                                         ] ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Kleinkörper> .
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Meteoroid
+<http://www.co-ode.org/ontologies/ont.owl#Meteoroid> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Kleinkörper> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mond
@@ -552,6 +611,25 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Kuipergürtel_Objekt> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Stein-Eisen-Meteoriten
+<http://www.co-ode.org/ontologies/ont.owl#Stein-Eisen-Meteoriten> rdf:type owl:Class ;
+                                                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatStamm> ;
+                                                                                        owl:hasValue "Übergangsbereich von Asteroiden"
+                                                                                      ] ;
+                                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Differenzierte_Meteoriten> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Steinmeteoriten
+<http://www.co-ode.org/ontologies/ont.owl#Steinmeteoriten> rdf:type owl:Class ;
+                                                           owl:equivalentClass <http://www.co-ode.org/ontologies/ont.owl#Undifferenzierte_Meteoriten> ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> ;
+                                                                                 owl:hasValue "false"^^xsd:boolean
+                                                                               ] ;
+                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Stern
 <http://www.co-ode.org/ontologies/ont.owl#Stern> rdf:type owl:Class ;
                                                  owl:equivalentClass [ owl:intersectionOf ( <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt>
@@ -581,16 +659,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe
 <http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe> rdf:type owl:Class ;
-                                                         owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatDurchmesser> ;
-                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                                    owl:onDatatype xsd:float ;
-                                                                                                    owl:withRestrictions ( [ xsd:maxInclusive "10.0"^^xsd:float
-                                                                                                                           ]
-                                                                                                                         )
-                                                                                                  ]
-                                                                             ] ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Superhaufen
@@ -611,6 +680,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#Transneptunisches_Objekt
 <http://www.co-ode.org/ontologies/ont.owl#Transneptunisches_Objekt> rdf:type owl:Class ;
                                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Undifferenzierte_Meteoriten
+<http://www.co-ode.org/ontologies/ont.owl#Undifferenzierte_Meteoriten> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Veränderlicher_Stern
@@ -738,12 +812,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Abee_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Abee_Meteorit> rdf:type owl:NamedIndividual ;
-                                                         <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                         <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                         <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Andura_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Andura_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ariel
@@ -768,7 +843,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Bovedy_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Bovedy_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Callisto
@@ -778,7 +854,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Campo_del_Cielo_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Campo_del_Cielo_Meteorit> rdf:type owl:NamedIndividual ;
-                                                                    <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
+                                                                    <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ceres
@@ -817,7 +895,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dronino_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Dronino_Meteorit> rdf:type owl:NamedIndividual ;
-                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dysnomia
@@ -861,7 +941,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Esquel_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Esquel_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Europa
@@ -876,17 +958,14 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Fukang_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Fukang_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ganymede
 <http://www.co-ode.org/ontologies/ont.owl#Ganymede> rdf:type owl:NamedIndividual ,
                                                              <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
-
-
-###  http://www.co-ode.org/ontologies/ont.owl#Grand_Meteorit
-<http://www.co-ode.org/ontologies/ont.owl#Grand_Meteorit> rdf:type owl:NamedIndividual ;
-                                                          <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Großer_Januarkomet
@@ -918,7 +997,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Homestead_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Homestead_Meteorit> rdf:type owl:NamedIndividual ;
-                                                              <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                              <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                              <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hydra
@@ -949,7 +1029,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Imilac_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Imilac_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Io
@@ -977,7 +1059,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kaidum_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Kaidum_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kerberos
@@ -997,7 +1080,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Makemake
@@ -1033,7 +1118,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mineo_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Mineo_Meteorit> rdf:type owl:NamedIndividual ;
-                                                          <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                          <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                          <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
+                                                          <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Miranda
@@ -1060,7 +1147,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Neuschwanstein_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Neuschwanstein_Meteorit> rdf:type owl:NamedIndividual ;
-                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nix
@@ -1075,12 +1163,14 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Oldenburg_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Oldenburg_Meteorit> rdf:type owl:NamedIndividual ;
-                                                              <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                              <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                              <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Peace_River_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Peace_River_Meteorit> rdf:type owl:NamedIndividual ;
-                                                                <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                                <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                                <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Phobos
@@ -1132,7 +1222,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Quidong_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Quidong_Meteorit> rdf:type owl:NamedIndividual ;
-                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Rhea
@@ -1142,7 +1233,8 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Richardton_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Richardton_Meteorit> rdf:type owl:NamedIndividual ;
-                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Saturn
@@ -1165,7 +1257,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Shelter_Island_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Shelter_Island_Meteorit> rdf:type owl:NamedIndividual ;
-                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
+                                                                   <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Shoemaker-Levy_9
@@ -1227,7 +1321,9 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Toluca_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Toluca_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Triton
@@ -1266,22 +1362,29 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Vermillion_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Vermillion_Meteorit> rdf:type owl:NamedIndividual ;
-                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Mantel von Asteroiden"^^xsd:string ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Winona_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Winona_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Mantel von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Yamato_691_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Yamato_691_Meteorit> rdf:type owl:NamedIndividual ;
-                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Zaisho_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Zaisho_Meteorit> rdf:type owl:NamedIndividual ;
-                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean .
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
+                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#10_Hygiea

@@ -39,20 +39,14 @@ public class OWL {
         OWLReasoner reasoner = new Reasoner.ReasonerFactory().createReasoner(owlOnt);
         System.out.println("Ontology is consistent: " + reasoner.isConsistent());
 
-        Set<OWLClass> classes = reasoner.getSubClasses(dataFactory.getOWLClass(IRI.create("http://example.org/ontology")), false).getFlattened();
-        for(OWLClass c : classes) {
-            System.out.println("Class: " + c.getIRI().getFragment());
+        Set<OWLClass> classes = reasoner.getSubClasses(dataFactory.getOWLClass(
+                IRI.create("http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt")), false).getFlattened();
+        for(OWLClass owlClass : classes) {
+            System.out.println("Class: " + owlClass.getIRI().getFragment());
             System.out.print("  Subclasses: ");
-            for(Node<OWLClass> n : reasoner.getSubClasses(c, true))
-                for(OWLClass s : n.getEntities()) {
-                    System.out.print(" " + s.getIRI().getFragment());
-                }
-            System.out.println();
-
-            System.out.print("  Disjoint clases: ");
-            for(Node<OWLClass> n : reasoner.getDisjointClasses(c))
-                for(OWLClass s : n.getEntities()) {
-                    System.out.print(" " + s.getIRI().getFragment());
+            for(Node<OWLClass> owlNode : reasoner.getSubClasses(owlClass, true))
+                for(OWLClass s : owlNode.getEntities()) {
+                    System.out.println("[" + s.getIRI().getFragment() + "]");
                 }
             System.out.println();
         }

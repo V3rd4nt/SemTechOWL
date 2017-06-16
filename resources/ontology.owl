@@ -990,6 +990,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                          <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Adhara
+<http://www.co-ode.org/ontologies/ont.owl#Adhara> rdf:type owl:NamedIndividual ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "2"^^xsd:int ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "M"^^xsd:string ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Alkione
+<http://www.co-ode.org/ontologies/ont.owl#Alkione> rdf:type owl:NamedIndividual ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "3"^^xsd:int ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "B"^^xsd:string ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Andura_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Andura_Meteorit> rdf:type owl:NamedIndividual ;
                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
@@ -1015,6 +1029,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                    <http://www.co-ode.org/ontologies/ont.owl#istImUmlaufEinesObjekts> "false"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Barnards_Pfeilstern
+<http://www.co-ode.org/ontologies/ont.owl#Barnards_Pfeilstern> rdf:type owl:NamedIndividual ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "M"^^xsd:string ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Biela_Komet
 <http://www.co-ode.org/ontologies/ont.owl#Biela_Komet> rdf:type owl:NamedIndividual ;
                                                        <http://www.co-ode.org/ontologies/ont.owl#hatUmlaufzeit> "6.65"^^xsd:float .
@@ -1036,6 +1056,14 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                                     <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
                                                                     <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Kern von Asteroiden"^^xsd:string ;
                                                                     <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Capella
+<http://www.co-ode.org/ontologies/ont.owl#Capella> rdf:type owl:NamedIndividual ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "1"^^xsd:int ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "2.6"^^xsd:float ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "G"^^xsd:string ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ceres
@@ -1304,9 +1332,23 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                           <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Mintaka
+<http://www.co-ode.org/ontologies/ont.owl#Mintaka> rdf:type owl:NamedIndividual ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "20.0"^^xsd:float ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "O"^^xsd:string ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Miranda
 <http://www.co-ode.org/ontologies/ont.owl#Miranda> rdf:type owl:NamedIndividual ,
                                                             <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Naos
+<http://www.co-ode.org/ontologies/ont.owl#Naos> rdf:type owl:NamedIndividual ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "59.0"^^xsd:float ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "O"^^xsd:string ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Neptun
@@ -1415,6 +1457,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                             <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Ras_Algethi
+<http://www.co-ode.org/ontologies/ont.owl#Ras_Algethi> rdf:type owl:NamedIndividual ;
+                                                       <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "2"^^xsd:int ;
+                                                       <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "M"^^xsd:string ;
+                                                       <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Rhea
 <http://www.co-ode.org/ontologies/ont.owl#Rhea> rdf:type owl:NamedIndividual ,
                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
@@ -1424,6 +1473,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 <http://www.co-ode.org/ontologies/ont.owl#Richardton_Meteorit> rdf:type owl:NamedIndividual ;
                                                                <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
                                                                <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Rigel
+<http://www.co-ode.org/ontologies/ont.owl#Rigel> rdf:type owl:NamedIndividual ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "17.0"^^xsd:float ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "B"^^xsd:string ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ross_128
+<http://www.co-ode.org/ontologies/ont.owl#Ross_128> rdf:type owl:NamedIndividual ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "0.156"^^xsd:float ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "M"^^xsd:string ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Saturn
@@ -1475,6 +1538,13 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                  <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Spica
+<http://www.co-ode.org/ontologies/ont.owl#Spica> rdf:type owl:NamedIndividual ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "11.0"^^xsd:float ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "B"^^xsd:string ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Styx
 <http://www.co-ode.org/ontologies/ont.owl#Styx> rdf:type owl:NamedIndividual ,
                                                          <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
@@ -1487,6 +1557,14 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet
 <http://www.co-ode.org/ontologies/ont.owl#Tageslichtkomet> rdf:type owl:NamedIndividual .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tau_Ceti
+<http://www.co-ode.org/ontologies/ont.owl#Tau_Ceti> rdf:type owl:NamedIndividual ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "5"^^xsd:int ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "0.77"^^xsd:float ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "G"^^xsd:string ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Tethys
@@ -1586,6 +1664,37 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStamm> "Übergangsbereich von Asteroiden"^^xsd:string ;
                                                            <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#α_Canis_Majoris_A
+<http://www.co-ode.org/ontologies/ont.owl#α_Canis_Majoris_A> rdf:type owl:NamedIndividual ;
+                                                             <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "5"^^xsd:int ;
+                                                             <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "2.12"^^xsd:float ;
+                                                             <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "A"^^xsd:string ;
+                                                             <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#α_Centauri_A
+<http://www.co-ode.org/ontologies/ont.owl#α_Centauri_A> rdf:type owl:NamedIndividual ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "5"^^xsd:int ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "1.1"^^xsd:float ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "G"^^xsd:string ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#α_Centauri_B
+<http://www.co-ode.org/ontologies/ont.owl#α_Centauri_B> rdf:type owl:NamedIndividual ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatLeuchtkraftklasse> "5"^^xsd:int ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "0.93"^^xsd:float ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "K"^^xsd:string ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ε_Indi_A
+<http://www.co-ode.org/ontologies/ont.owl#ε_Indi_A> rdf:type owl:NamedIndividual ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatMasse> "0.77"^^xsd:float ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSpektralklasse> "K"^^xsd:string ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#istSelbstleuchtend> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#10_Hygiea

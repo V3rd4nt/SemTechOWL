@@ -187,6 +187,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                       rdfs:range xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#hatSchwerkraft
+<http://www.co-ode.org/ontologies/ont.owl#hatSchwerkraft> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> ;
+                                                          rdfs:range xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse
+<http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                          rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> ;
+                                                          rdfs:range xsd:float .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand
 <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> rdf:type owl:DatatypeProperty ;
                                                             rdfs:subPropertyOf owl:topDataProperty ;
@@ -559,7 +573,7 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Meteor
 <http://www.co-ode.org/ontologies/ont.owl#Meteor> rdf:type owl:Class ;
-                                                  owl:equivalentClass <http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe> ;
+                                                  owl:equivalentClass <http://www.co-ode.org/ontologies/ont.owl#Sternschuppen> ;
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> .
 
 
@@ -575,6 +589,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#Meteoroid
 <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Kleinkörper> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mittelschweres_Schwarzes_Loch
+<http://www.co-ode.org/ontologies/ont.owl#Mittelschweres_Schwarzes_Loch> rdf:type owl:Class ;
+                                                                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> ;
+                                                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                                    owl:withRestrictions ( [ xsd:maxInclusive "1000.0"^^xsd:float
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                             ] ;
+                                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mond
@@ -611,6 +639,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#Planetenmond
 <http://www.co-ode.org/ontologies/ont.owl#Planetenmond> rdf:type owl:Class ;
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#natürlicher_Satellit> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Primordiales_Schwarzes_Loch
+<http://www.co-ode.org/ontologies/ont.owl#Primordiales_Schwarzes_Loch> rdf:type owl:Class ;
+                                                                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> ;
+                                                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                  owl:onDatatype xsd:float ;
+                                                                                                                  owl:withRestrictions ( [ xsd:maxInclusive "1.0"^^xsd:float
+                                                                                                                                         ]
+                                                                                                                                       )
+                                                                                                                ]
+                                                                                           ] ;
+                                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Resonantes_KBO
@@ -689,6 +731,10 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch
 <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> rdf:type owl:Class ;
+                                                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSchwerkraft> ;
+                                                                                owl:hasValue "sehr stark"
+                                                                              ] ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt> .
 
 
@@ -721,6 +767,20 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteorit> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Stellares_Schwarzes_Loch
+<http://www.co-ode.org/ontologies/ont.owl#Stellares_Schwarzes_Loch> rdf:type owl:Class ;
+                                                                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> ;
+                                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                               owl:onDatatype xsd:float ;
+                                                                                                               owl:withRestrictions ( [ xsd:maxInclusive "10.0"^^xsd:float
+                                                                                                                                      ]
+                                                                                                                                    )
+                                                                                                             ]
+                                                                                        ] ;
+                                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Stern
 <http://www.co-ode.org/ontologies/ont.owl#Stern> rdf:type owl:Class ;
                                                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -742,9 +802,27 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Großkörper> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe
-<http://www.co-ode.org/ontologies/ont.owl#Sternschnuppe> rdf:type owl:Class ;
+###  http://www.co-ode.org/ontologies/ont.owl#Sternschuppen
+<http://www.co-ode.org/ontologies/ont.owl#Sternschuppen> rdf:type owl:Class ;
+                                                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> ;
+                                                                               owl:hasValue "true"^^xsd:boolean
+                                                                             ] ;
                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Meteoroid> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Supermassereiches_Schwarzes_Loch
+<http://www.co-ode.org/ontologies/ont.owl#Supermassereiches_Schwarzes_Loch> rdf:type owl:Class ;
+                                                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> ;
+                                                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                       owl:onDatatype xsd:float ;
+                                                                                                                       owl:withRestrictions ( [ xsd:maxInclusive "100000.0"^^xsd:float
+                                                                                                                                              ]
+                                                                                                                                            )
+                                                                                                                     ]
+                                                                                                ] ;
+                                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Schwarzes_Loch> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Transneptunisches_Objekt
@@ -900,6 +978,12 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 #    Individuals
 #################################################################
 
+###  http://www.co-ode.org/ontologies/ont.owl#A0620-00
+<http://www.co-ode.org/ontologies/ont.owl#A0620-00> rdf:type owl:NamedIndividual ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSchwerkraft> "sehr stark"^^xsd:string ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> "11.0"^^xsd:float .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Abee_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Abee_Meteorit> rdf:type owl:NamedIndividual ;
                                                          <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
@@ -919,6 +1003,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 ###  http://www.co-ode.org/ontologies/ont.owl#Ariel1
 <http://www.co-ode.org/ontologies/ont.owl#Ariel1> rdf:type owl:NamedIndividual ;
                                                   <http://www.co-ode.org/ontologies/ont.owl#istImUmlaufEinesObjekts> "false"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Arietiden2017
+<http://www.co-ode.org/ontologies/ont.owl#Arietiden2017> rdf:type owl:NamedIndividual ;
+                                                         <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Asterix
@@ -1164,6 +1253,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                          <http://www.co-ode.org/ontologies/ont.owl#istWiederkehrend> "false"^^xsd:boolean .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Leoniden2017
+<http://www.co-ode.org/ontologies/ont.owl#Leoniden2017> rdf:type owl:NamedIndividual ;
+                                                        <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> "true"^^xsd:boolean .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit
 <http://www.co-ode.org/ontologies/ont.owl#Loreto_Meteorit> rdf:type owl:NamedIndividual ;
                                                            <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
@@ -1258,6 +1352,11 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
 <http://www.co-ode.org/ontologies/ont.owl#Peace_River_Meteorit> rdf:type owl:NamedIndividual ;
                                                                 <http://www.co-ode.org/ontologies/ont.owl#hatLeuchterscheinungEintrittErdatmosphäre> "true"^^xsd:boolean ;
                                                                 <http://www.co-ode.org/ontologies/ont.owl#hatStammAsteroiden> "false"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Perseiden2017
+<http://www.co-ode.org/ontologies/ont.owl#Perseiden2017> rdf:type owl:NamedIndividual ;
+                                                         <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> "true"^^xsd:boolean .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Phobos
@@ -1440,6 +1539,17 @@ owl:topObjectProperty rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Astr
                                                   <http://www.co-ode.org/ontologies/ont.owl#hatSonnenabstand> "19.2"^^xsd:float ;
                                                   <http://www.co-ode.org/ontologies/ont.owl#hatUmgebungSeinerBahnBereinigt> "true"^^xsd:boolean ;
                                                   <http://www.co-ode.org/ontologies/ont.owl#hatÄquatordurchmesser> "51118.0"^^xsd:float .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ursiden2017
+<http://www.co-ode.org/ontologies/ont.owl#Ursiden2017> rdf:type owl:NamedIndividual ;
+                                                       <http://www.co-ode.org/ontologies/ont.owl#istVollständigVerglüht> "true"^^xsd:boolean .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#V404_Cyg
+<http://www.co-ode.org/ontologies/ont.owl#V404_Cyg> rdf:type owl:NamedIndividual ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSchwerkraft> "sehr stark"^^xsd:string ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hatSonnenMasse> "9.0"^^xsd:float .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Venus

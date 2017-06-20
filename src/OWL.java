@@ -26,7 +26,7 @@ public class OWL {
         this.out = out;
     }
 
-    public void execute() throws OWLOntologyCreationException {
+    public void create() throws OWLOntologyCreationException {
 
         out.output(2, "Start Setup");
 
@@ -85,7 +85,13 @@ public class OWL {
     }
 
     private void displayPropertiesOfIndividual (OWLNamedIndividual ind) {
+        /*Set<OWLClassExpression> associatedClasses = ind.getTypes(owlOnt);
+        System.out.println("\t\t\tAssociated classes: ");
+        for (OWLClassExpression owlClassEx : associatedClasses) {
+            System.out.println("[" + owlClassEx.toString() + "]");
+        }*/
         Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataProperties = ind.getDataPropertyValues(owlOnt);
+        System.out.println("\t\t\tData properties: ");
         for (OWLDataPropertyExpression dpe : dataProperties.keySet()) {
             System.out.print("\t\t\t[" + dpe.asOWLDataProperty().getIRI().getFragment());
             for (OWLLiteral lit : dataProperties.get(dpe)) {
@@ -95,6 +101,7 @@ public class OWL {
             System.out.println();
         }
         Map<OWLObjectPropertyExpression, Set<OWLIndividual>> objectProperties = ind.getObjectPropertyValues(owlOnt);
+        System.out.println("\t\t\tObject properties: ");
         for (OWLObjectPropertyExpression ope : objectProperties.keySet()) {
             System.out.print("\t\t\t[" + ope.asOWLObjectProperty().getIRI().getFragment() + " ");
             for (OWLIndividual i : objectProperties.get(ope)) {
@@ -102,6 +109,15 @@ public class OWL {
             }
             System.out.print("]");
             System.out.println();
+        }
+    }
+
+    public void displayIndividualsOfClassByClassname (String name) {
+        for (OWLClass owlClass : classes) {
+            if(owlClass.getIRI().getFragment().equals(name)) {
+                System.out.println("Class: [" + owlClass.getIRI().getFragment() + "]");
+                displayIndividualsforClass(owlClass);
+            }
         }
     }
 }

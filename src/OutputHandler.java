@@ -14,6 +14,6 @@ public class OutputHandler {
     public void output(int level, String output) {
         if(level <= this.maxLevel)
             System.out.println("["
-                    + (System.currentTimeMillis()-starttime) +"ms]\t ----- " + output + " -----");
+                    + (System.currentTimeMillis()-starttime) +"ms] " + output);
     }
 }

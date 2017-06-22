@@ -22,6 +22,8 @@ public class OWL {
     Set<OWLClass> classes;
     OWLOntology owlOnt;
 
+    OWLDataFactory astro = manager.getOWLDataFactory();
+
     public OWL(OutputHandler out) {
         this.out = out;
     }
@@ -42,7 +44,6 @@ public class OWL {
                 new FileDocumentSource(new File("resources/ontology.owl")), loaderConf);
 
         reasoner = new Reasoner.ReasonerFactory().createReasoner(owlOnt);
-
 
         classes = reasoner.getSubClasses(dataFactory.getOWLClass(
                 IRI.create("http://www.co-ode.org/ontologies/ont.owl#Astronomisches_Objekt")), false).getFlattened();
@@ -120,5 +121,47 @@ public class OWL {
             }
         }
     }
+/*
+    public void displayNecessaryPropertiesAssertions(String name) {
+        for (OWLClass owlClass : classes) {
+            if (owlClass.getIRI().getFragment().equals(name)) {
+                OWLClass propAssert = astro.getOWLClass(IRI.create(iri));
+                printProperties(m, o, r, name);
+                System.out.println("Class: [" + owlClass.getIRI().getFragment() + "]");
+                displayIndividualsforClass(owlClass);
+            }
+        }
+    }
+
+    // Prints out the properties that instances must have
+    private void printProperties(OWLOntologyManager man, OWLOntology o,
+                                 OWLReasoner reasoner, OWLClass cls) {
+        System.out.println("Properties of " + cls);
+        for (OWLObjectPropertyExpression prop : o.getObjectPropertiesInSignature()) {
+            OWLClassExpression restriction = astro.getOWLObjectSomeValuesFrom(prop, astro.getOWLThing());
+            OWLClassExpression intersection = astro.getOWLObjectIntersectionOf(cls,
+                    astro.getOWLObjectComplementOf(restriction));
+            if (!reasoner.isSatisfiable(intersection))
+                System.out.println("Instances of "
+                        + cls + " must have " + prop);
+        }
+    }
+
+    OWLOntologyManager m = create();
+    OWLOntology o = m.createOntology(pizza_iri);
+    // class A and class B
+    OWLClass clsA = df.getOWLClass(IRI.create(pizza_iri + "#A"));
+    OWLClass clsB = df.getOWLClass(IRI.create(pizza_iri + "#B"));
+    // Now create the axiom
+    OWLAxiom axiom = df.getOWLSubClassOfAxiom(clsA, clsB);
+    // add the axiom to the ontology.
+    AddAxiom addAxiom = new AddAxiom(o, axiom);
+// We now use the manager to apply the change
+m.applyChange(addAxiom);
+    // remove the axiom from the ontology
+    RemoveAxiom removeAxiom = new RemoveAxiom(o, axiom);
+m.applyChange(removeAxiom);
+
+*/
 }
 

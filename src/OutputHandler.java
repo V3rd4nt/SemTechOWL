@@ -16,4 +16,5 @@ public class OutputHandler {
             System.out.println("["
                     + (System.currentTimeMillis()-starttime) +"ms] " + output);
     }
+
 }

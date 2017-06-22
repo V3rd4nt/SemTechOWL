@@ -13,7 +13,9 @@ public class Main {
             "What do you like to do?\n" +
             "\t(1) Check consistency of ontology\n" +
             "\t(2) List all classes, individuals and their properties\n" +
-            "\t(3) List all individuals and their properties for a given class\n";
+            "\t(3) List all individuals and their properties for a given class\n" +
+            "\t(0) Exit the program\n";
+
     private final static String errorMsg = "Sorry, that's not a valid input. Please try again: ";
 
     public static void main(String[] args) throws OWLOntologyCreationException, IOException {
@@ -32,6 +34,9 @@ public class Main {
                 case '3':
                     System.out.print("Name of class or subclass: ");
                     miniproject2.displayIndividualsOfClassByClassname(createString());
+                    break;
+                case '0':
+                    System.exit(0);
                     break;
                 default:
                 System.out.println(errorMsg);
